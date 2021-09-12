@@ -4,8 +4,10 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
+require("dotenv").config() // reading .env
+
 @Module({
-  imports: [MongooseModule.forRoot("mongodb://localhost/ilink-rest-api"), UsersModule],
+  imports: [MongooseModule.forRoot(process.env.DB_CONNECT), UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
