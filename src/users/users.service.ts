@@ -42,7 +42,7 @@ export class UsersService {
   }
 
   findOne(id: string) {
-    return this.userModel.findOne({});
+    return this.userModel.findById(id);
   }
 
   findByName(name: string){
